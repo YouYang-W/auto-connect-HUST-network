@@ -43,6 +43,7 @@ def login():
 
 def has_network():
     try:
+        # 这里不能直接ping，即使断开连接也会成功ping通
         r = requests.get("https://www.baidu.com")
         return r.status_code == requests.codes.ok
     except:

@@ -1,7 +1,9 @@
 ## 前言
 
-实验室校园网会不定时断开连接, 需要手动点击认证, 
-通过py脚本实现自动认证，防止校园网断开链接无法远程。
+仿照Kingdo777的思路与代码，实现HUST校园网自动连接。
+
+已有问题：实验室校园网会不定时断开连接, 需要手动点击认证, 
+解决方案：通过py脚本实现自动认证，防止校园网断开连接无法远程。
 
 
 ## 源码解析
@@ -52,10 +54,10 @@ if __name__ == '__main__':
 
 ## 使用
 
-0. git clone 仓库网址
+0. 在终端输入 git clone https://github.com/YouYang-W/auto-connect-HUST-network/tree/youyang-branch
 
 
-1. 将获取到的content信息存放到main.py的同目录下的名为`content`的文件中，点击win文件管理器的查看，选择展示文件拓展名
+1. 将获取到的content信息存放到main.py的同目录下的名为`content`的文件中。注意点击win文件管理器的查看，选择展示文件拓展名，content文件不要有任何后缀。
 
 
 2. 执行python脚本
