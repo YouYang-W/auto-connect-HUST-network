@@ -13,7 +13,9 @@ def log(info):
 
 
 def login():
-    url = 'http://192.168.50.3:8080/eportal/InterFace.do?method=login'
+    # url = 'http://192.168.50.3:8080/eportal/InterFace.do?method=login'
+    # 实验室登录认证页面
+    url = 'http://172.18.18.60:8080/eportal/InterFace.do?method=login'
     config_file = os.environ.get('AUTO_NET_RECONNECT_CONFIG_FILE', "content")
     with open(config_file, "r") as f:
         data = f.read().strip('"').strip("'")
@@ -39,23 +41,20 @@ def login():
         log("login 连接异常:" + str(info))
 
 
-def ping(host, n):
-    cmd = "ping {} {} {} > ping.log".format(
-        "-n" if sys.platform.lower() == "win32" else "-c",
-        n,
-        host,
-    )
-    return 0 == os.system(cmd)
-
-
-def pong():
-    return ping("202.114.0.242", 4) or ping("8.8.8.8", 4)
+def has_network():
+    try:
+        r = requests.get("https://www.baidu.com")
+        return r.status_code == requests.codes.ok
+    except:
+        return False
 
 
 if __name__ == '__main__':
     while True:
-        if pong():
-            time.sleep(5)
+        if has_network():
+            print("Y")
+            time.sleep(10)
         else:
+            print("N")
             login()
             time.sleep(10)
