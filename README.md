@@ -57,7 +57,7 @@ if __name__ == '__main__':
 0. 在终端输入 git clone https://github.com/YouYang-W/auto-connect-HUST-network/tree/youyang-branch
 
 
-1. 将获取到的content信息存放到main.py的同目录下的名为`content`的文件中。注意点击win文件管理器的查看，选择展示文件拓展名，content文件不要有任何后缀。
+1. 将获取到的content信息存放到main.py的同目录下的名为`content`的文件中。注意点击win文件管理器的查看，选择展示文件拓展名，content文件不要有任何后缀。content内容无需加入引号。
 
 
 2. 执行python脚本
